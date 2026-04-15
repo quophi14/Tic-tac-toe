@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <dialog id="names" closedby="none">
+        <form>
+            <label for="player1">Player X</label>
+            <input id="player1" 
+            name="player1" 
+            type="text" 
+            maxlength="25" required
+            />
+
+            <label for="player2">Player O</label>
+            <input id="player2" 
+            name="player2"
+            type="text"
+            maxlength="25"
+            required/>
+
+            <button>Submit</button>
+        </form>
+    </dialog>
+
+    <dialog id="outcome" closedby="any">
+        <h1></h1>
+        <h2>Click anywhere to close</h2>
+    </dialog>
+
+    <div id="ui">
+        <button id="start">Start New Game</button>
+
+        <div class="player">
+            <h1></h1>
+            <h2 class="wins">Wins: 0</h2>
+            <h2 class="losses">Losses: 0</h2>
+        </div>
+
+        <div class="player">
+            <h1></h1>
+            <h2 class="wins">Wins: 0</h2>
+            <h2 class="losses">Losses: 0</h2>
+        </div>
+
+        <h2 id="draws">Draws: 0</h2>
+    </div>
+
+    <div id="board">
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+    </div>
+    
+    <script src="script_1.js" defer></script>
+</body>
+</html>

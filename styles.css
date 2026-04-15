@@ -1,0 +1,133 @@
+/* Resets  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  color: var(--foreground);
+  font-family: sans-serif;
+}
+
+button,
+input {
+  background: none;
+  border: var(--border);
+}
+
+button:active {
+  background: var(--foreground);
+}
+
+/* Variables */
+:root {
+  --big-gap: 20px;
+  --gap: 10px;
+  --small-gap: 5px;
+
+  --border: solid var(--border-color) 2px;
+  --dashed-border:  var(--border-color) 5px;
+  --border-color: #183068;
+  --background: yellow; 
+
+  --foreground: indigo;
+}
+
+/* Main Body */
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+
+  width: 100%;
+  min-height: 100%;
+  padding: var(--big-gap);
+  gap: var(--big-gap);
+
+  background: var(--background);
+}
+
+/* Dialogs */
+dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: var(--big-gap);
+
+  border: var(--dashed-border);
+  background: var(--background);
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Names Form */
+#names > form {
+  display: grid;
+  grid-template-columns: 10ch 25ch;
+  grid-template-rows: repeat(3, 40px);
+
+  gap: var(--big-gap);
+
+  text-align: right;
+}
+
+#names > form label {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#names > form input {
+  padding: var(--small-gap);
+}
+
+#names > form button {
+  grid-column: span 2;
+}
+
+/* Game UI */
+#ui {
+  width: 300px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px 1fr 1fr 100px;
+  gap: 20px;
+}
+
+#start {
+  font-size: 2rem;
+}
+
+#draws,
+.player {
+  padding: var(--gap);
+
+  border: var(--border);
+  border-color: transparent;
+}
+
+.player.selected {
+  border-color: var(--border-color);
+}
+
+/* Board */
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1 / 1;
+}
+
+#board > button {
+  font-size: min(15vw, 100px);
+}
